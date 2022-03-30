@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import UserForm from "./components/form/UserForm";
 import UserList from "./components/list/UserList";
+import InvalidModal from "./components/modal/InvalidModal";
 function App() {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
@@ -17,10 +18,14 @@ function App() {
   const handleFormSubmit = (event) => {
     event.preventDefault();
     if (!name || !age) {
+      setValidation("Please enter a valid name and age(non-empty values)");
+      return;
       // Call modal
       //Return
     }
     if (age < 0) {
+      setValidation("Please enter a valid age (> 0).");
+      return;
       //call modal
       //Return
     }
@@ -28,6 +33,10 @@ function App() {
     setUsers((prevState) => [...prevState, { name: name, age: age }]);
     setName("");
     setAge("");
+  };
+
+  const handleModalButtonClick = () => {
+    setValidation("");
   };
 
   return (
@@ -41,7 +50,10 @@ function App() {
       />
 
       <UserList users={users} />
-      {/* Conditionally render the modal based on the validation */}
+      <InvalidModal
+        errorMessage={validation}
+        onModalButtonClick={handleModalButtonClick}
+      />
     </div>
   );
 }
