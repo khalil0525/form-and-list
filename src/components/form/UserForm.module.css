@@ -1,0 +1,40 @@
+/* Primary color: #DD4040
+  Gray color: #787891*/
+
+.userform {
+  width: 700px;
+  /* height: auto; */
+  padding: 24px;
+  margin: 0 auto;
+  background-color: #f4f4f6;
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+label {
+  font-size: 20px;
+  font-weight: bold;
+}
+.input-field {
+  align-self: stretch;
+  height: 26px;
+}
+
+.btn {
+  font-size: 20px;
+
+  padding: 6px 24px;
+  background-color: #dd4040;
+  color: #fceeee;
+  border: none;
+}
+.btn:hover {
+  background-color: #da2f2f;
+}
+.btn:active {
+  background-color: #230606;
+}

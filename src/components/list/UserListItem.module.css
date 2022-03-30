@@ -1,0 +1,11 @@
+.item {
+  border: 1px solid #c7c7d1;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: 400;
+  /* margin: 8px auto; */
+
+  /* We use flexbox to align text to the flex-start position */
+  display: flex;
+  justify-content: flex-start;
+}
